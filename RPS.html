@@ -21,16 +21,34 @@
                     console.log("It's a Tie! You both selected " + computerSelection + ".")
                 } else if (playerSelection == "rock" && computerSelection == "scissors") {
                     console.log("You win! Rock beats Scissors")
+                    return true
                 } else if (playerSelection == "paper" && computerSelection == "rock") {
                     console.log("You win! Paper beats Rock.")
+                    return true 
                 } else if (playerSelection == "scissors" && computerSelection == "paper") {
                     console.log("You win! Scissors beats paper.")
+                    return true
                 } else if(playerSelection =="rock" && computerSelection == "paper") {
                     console.log("You Lose. Paper covers Rock")
-                } else if (playerSelection == "paper" && compterSelection == "scissors") {
+                } else if (playerSelection == "paper" && computerSelection == "scissors") {
                     console.log("You Lose. Scissors cuts paper")
                 } else {
                     console.log("You Lose. Rock smashes scissors")
+                }
+            }
+
+            function game(num) {
+                let playerScore = 0
+                let computerScore = 0
+                for (i=0; i<num; i++ ) {
+                    outcome = playRound(playerPlay(),computerPlay())
+                    if(outcome) {
+                        playerScore ++
+                    }
+                    else {
+                        computerScore ++
+                    }
+                    console.log("The score is, Player: "+playerScore + " Computer: " + computerScore)
                 }
             }
         </script>
